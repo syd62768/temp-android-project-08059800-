@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+    ================================================================================
+    Widget Styles -> این فایل، استایل‌های خاص برای کامپوننت‌ها را تعریف می‌کند.
+    ================================================================================
+    -->
+
+    <!-- ===== استایل‌های اصلی برنامه (حفظ شده) ===== -->
+    <style name="ShapeAppearance.App.CircleImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="OtpEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/otp_box_underline_background</item>
+        <item name="android:inputType">number</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style>
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+    <!-- ===== استایل‌های قدیمی داشبورد (حفظ شده برای سازگاری) ===== -->
+    <style name="DashboardCard" parent="Widget.MaterialComponents.CardView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="cardCornerRadius">24dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+    </style>
+
+    <style name="DashboardCardContent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingTop">24dp</item>
+        <item name="android:paddingBottom">24dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="DashboardCardIcon">
+        <item name="android:layout_width">56dp</item>
+        <item name="android:layout_height">56dp</item>
+    </style>
+
+    <style name="DashboardCardTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <!-- =================================================================== -->
+    <!-- ===== استایل‌های جدید و سازمان‌یافته برای داشبورد (نسخه نهایی) ===== -->
+    <!-- =================================================================== -->
+
+    <style name="Widget.App.Dashboard.Card" parent="Widget.MaterialComponents.CardView">
+        <item name="cardElevation">0dp</item>
+        <item name="cardCornerRadius">20dp</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="strokeColor">#E2E8F0</item>
+    </style>
+
+    <style name="Widget.App.Dashboard.Card.Clickable" parent="Widget.App.Dashboard.Card">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+    </style>
+
+    <style name="Widget.App.Dashboard.HeaderCard" parent="Widget.MaterialComponents.CardView">
+        <item name="cardElevation">0dp</item>
+        <item name="cardCornerRadius">24dp</item>
+    </style>
+
+    <style name="Widget.App.Dashboard.WonderCard.Modern" parent="Widget.App.Dashboard.Card">
+        <item name="cardBackgroundColor">@color/card_background_cream</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
+
+    <style name="Widget.App.Dashboard.CompassCard" parent="Widget.App.Dashboard.Card.Clickable">
+        <item name="cardBackgroundColor">@color/white</item>
+    </style>
+
+    <style name="Widget.App.Dashboard.MainCard.Modern" parent="Widget.App.Dashboard.Card.Clickable">
+        <item name="cardBackgroundColor">@color/white</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="strokeColor">#E2E8F0</item>
+    </style>
+
+    <style name="Widget.App.Dashboard.RefreshButton" parent="Widget.AppCompat.ImageButton">
+        <item name="android:layout_width">36dp</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:layout_marginStart">12dp</item>
+        <item name="android:background">@drawable/dashboard_refresh_button_bg</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:src">@drawable/ic_refresh</item>
+    </style>
+
+    <!-- متن‌ها -->
+    <style name="Widget.App.TextView.HeaderTitle" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/vazirmatn_medium</item>
+        <item name="android:textColor">#1F2937</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.App.TextView.HeaderSubtitle" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/vazirmatn_regular</item>
+        <item name="android:textColor">#4B5563</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Widget.App.TextView.HeaderActionText" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:fontFamily">@font/vazirmatn_medium</item>
+        <item name="android:textColor">#4B5563</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="Widget.App.TextView.SectionTitle" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/vazirmatn_medium</item>
+        <item name="android:textColor">#1F2937</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.App.TextView.CardTitle.Small" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/vazirmatn_medium</item>
+        <item name="android:textColor">@color/primary_text_color</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Widget.App.TextView.CardTitle.Large" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/vazirmatn_medium</item>
+        <item name="android:textColor">@color/primary_text_color</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.App.TextView.CardSubtitle" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/vazirmatn_regular</item>
+        <item name="android:textColor">@color/secondary_text_color</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!-- =================================================================== -->
+    <!-- ===== افزوده‌های مخصوص کارت تحلیل «نمودار رشد» (جدید) ===== -->
+    <!-- =================================================================== -->
+
+    <!-- تعریف استایل‌های والد خالی برای رفع خطا -->
+    <style name="GaugeBand" />
+    <style name="GaugeLegend" />
+
+    <!-- باندهای گیج (قرمز/زرد/سبز/زرد/قرمز) -->
+    <style name="GaugeBand.Red">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">5</item>
+        <item name="android:background">@drawable/gauge_red</item>
+    </style>
+
+    <style name="GaugeBand.Yellow">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">10</item>
+        <item name="android:background">@drawable/gauge_yellow</item>
+    </style>
+
+    <style name="GaugeBand.Green">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">70</item>
+        <item name="android:background">@drawable/gauge_green</item>
+    </style>
+
+    <!-- راهنمای رنگ‌ها (چیپ‌های کوچک + متن) -->
+    <style name="GaugeLegend.Text" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:layout_marginStart">6dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:textColor">@color/secondary_text_color</item>
+    </style>
+
+    <style name="GaugeLegend.Red">
+        <item name="android:layout_width">12dp</item>
+        <item name="android:layout_height">12dp</item>
+        <item name="android:background">@drawable/gauge_red_chip</item>
+        <item name="android:layout_marginEnd">4dp</item>
+    </style>
+
+    <style name="GaugeLegend.Yellow">
+        <item name="android:layout_width">12dp</item>
+        <item name="android:layout_height">12dp</item>
+        <item name="android:background">@drawable/gauge_yellow_chip</item>
+        <item name="android:layout_marginStart">6dp</item>
+        <item name="android:layout_marginEnd">4dp</item>
+    </style>
+
+    <style name="GaugeLegend.Green">
+        <item name="android:layout_width">12dp</item>
+        <item name="android:layout_height">12dp</item>
+        <item name="android:background">@drawable/gauge_green_chip</item>
+        <item name="android:layout_marginStart">6dp</item>
+        <item name="android:layout_marginEnd">4dp</item>
+    </style>
+
+</resources>

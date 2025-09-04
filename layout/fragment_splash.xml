@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    تغییرات اصلی در این فایل:
+    1. پس‌زمینه به گرادینت جدیدی که ساختیم (splash_background) تغییر کرده است.
+    2. به TextView یک ID داده شده تا بتوانیم در کد به آن انیمیشن بدهیم.
+    3. رنگ متن به رنگ تیره‌تر و خواناتری تغییر کرده تا روی پس‌زمینه روشن به خوبی دیده شود.
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_background">
+
+    <TextView
+        android:id="@+id/tv_app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="همراه کودک"
+        android:textColor="#4F5D75"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+</FrameLayout>

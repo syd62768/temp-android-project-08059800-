@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.chip.ChipGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/chipMetricGroup"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="24dp"
+    android:layout_marginEnd="24dp"
+    android:layout_marginTop="16dp"
+    android:gravity="center_horizontal"
+    app:singleSelection="true"
+    app:selectionRequired="true">
+
+    <!-- وزن -->
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip_weight"
+        style="@style/Widget.MaterialComponents.Chip.Choice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="وزن"
+        app:chipIconVisible="false"
+        app:checkedIconVisible="false"
+        app:ensureMinTouchTargetSize="true"
+        app:chipStrokeWidth="1dp"
+        app:chipStrokeColor="@color/edit_text_border"
+        app:chipCornerRadius="999dp" />
+
+    <!-- قد -->
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip_height"
+        style="@style/Widget.MaterialComponents.Chip.Choice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="قد"
+        app:chipIconVisible="false"
+        app:checkedIconVisible="false"
+        app:ensureMinTouchTargetSize="true"
+        app:chipStrokeWidth="1dp"
+        app:chipStrokeColor="@color/edit_text_border"
+        app:chipCornerRadius="999dp" />
+
+    <!-- دور سر -->
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip_head"
+        style="@style/Widget.MaterialComponents.Chip.Choice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="دور سر"
+        app:chipIconVisible="false"
+        app:checkedIconVisible="false"
+        app:ensureMinTouchTargetSize="true"
+        app:chipStrokeWidth="1dp"
+        app:chipStrokeColor="@color/edit_text_border"
+        app:chipCornerRadius="999dp" />
+
+</com.google.android.material.chip.ChipGroup>

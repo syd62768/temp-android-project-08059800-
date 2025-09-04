@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl"
+    android:background="@android:color/transparent"
+    tools:context=".GrowthChartFragment">
+
+    <!-- اسکرول: استفادهٔ بهینه از فضا و سازگاری با گوشی‌های کوچک -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="ifContentScrolls">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
+
+            <!-- عنوان و سن فعلی -->
+            <TextView
+                android:id="@+id/textViewGrowthTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="24dp"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                tools:text="ماجرای قد کشیدن آراد" />
+
+            <TextView
+                android:id="@+id/textViewCurrentAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="6dp"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp"
+                tools:text="سن فعلی: ۶ ماه و ۱۰ روز" />
+
+            <!-- انتخاب‌گر شاخص: وزن/قد/دور سر -->
+            <include
+                android:id="@+id/include_metric_selector"
+                layout="@layout/include_metric_selector" />
+
+            <!-- کارت تحلیل (جایگزین چارت) -->
+            <include
+                android:id="@+id/cardAnalysis"
+                layout="@layout/view_growth_analysis_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"/>
+
+
+            <!-- کارت نکته/راهنما: توضیح رنگ‌ها و نحوهٔ خواندن گیج -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="14dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/edit_text_border"
+                app:cardBackgroundColor="@color/delight_card_bg">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="راهنمای خواندن نوار: سبز یعنی «طبیعی»، زرد یعنی «نزدیک مرز و نیاز به پیگیری»، قرمز یعنی «نیاز به بررسی پزشکی»."
+                    android:textColor="@color/secondary_text_color"
+                    android:textSize="13sp"/>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="32dp"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- دکمه افزودن رکورد -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_margin="24dp"
+        android:src="@drawable/ic_add"
+        app:backgroundTint="@color/default_button"
+        app:tint="@color/white" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

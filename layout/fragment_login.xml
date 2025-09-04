@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:layoutDirection="rtl"
+    tools:context=".ui.auth.LoginFragment">
+
+    <!--
+        اصلاح اصلی:
+        1. تصویر پس‌زمینه تا زیر ورقه پایینی امتداد پیدا می‌کند.
+        2. ارتفاع آن با درصد کنترل می‌شود تا از زوم بیش از حد جلوگیری شود.
+    -->
+
+    <!-- خط راهنما برای کنترل جایگیری ورقه پایینی -->
+
+    <ImageView
+        android:id="@+id/iv_background_illustration"
+        android:layout_width="430dp"
+        android:layout_height="442dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/login_illustration_motherly"
+        android:alpha="0.8"
+        app:layout_constraintBottom_toTopOf="@+id/ll_content_section"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_sheet_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.42" />
+
+    <!-- خط راهنما برای انتهای تصویر -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_image_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <!-- ورقه پایینی برای قرارگیری محتوا -->
+    <LinearLayout
+        android:id="@+id/ll_content_section"
+        android:layout_width="410dp"
+        android:layout_height="300dp"
+        android:background="@drawable/bottom_sheet_background"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingStart="32dp"
+        android:paddingTop="32dp"
+        android:paddingEnd="32dp"
+        android:paddingBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_sheet_top">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ورود | ثبت‌نام"
+            android:textColor="@color/text_primary"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="شماره موبایل خود را وارد کنید"
+            android:textColor="@color/text_secondary"
+            android:textSize="16sp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/phone_input_container"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/phone_input_background"
+            android:layoutDirection="ltr">
+
+            <ImageView
+                android:id="@+id/iv_phone_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:src="@drawable/ic_phone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/text_secondary" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:background="@color/edit_text_border"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_phone_icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/et_phone_number"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="center_vertical|left"
+                android:hint="000 000 0000"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:paddingStart="20dp"
+                android:paddingEnd="16dp"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint"
+                android:textDirection="ltr"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/divider"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_send_code"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/login_button_color"
+            android:text="ادامه"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:cornerRadius="16dp" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:indeterminateDrawable="@drawable/loader_heart_animated"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

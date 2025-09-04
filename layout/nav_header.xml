@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="192dp"
+    android:background="@drawable/dashboard_header_gradient"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_header_avatar"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:padding="3dp"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+        app:strokeColor="@color/white"
+        app:strokeWidth="2dp"
+        tools:src="@drawable/avatar_boy" />
+
+    <TextView
+        android:id="@+id/tv_header_child_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/vazirmatn_regular"
+        android:textStyle="bold"
+        android:textColor="@color/delight_text_on_header"
+        android:textSize="16sp"
+        tools:text="نام کودک" />
+
+    <TextView
+        android:id="@+id/tv_header_child_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/vazirmatn_regular"
+        android:textColor="@color/delight_text_on_header"
+        android:alpha="0.85"
+        android:textSize="12sp"
+        tools:text="سن کودک" />
+
+</LinearLayout>
+

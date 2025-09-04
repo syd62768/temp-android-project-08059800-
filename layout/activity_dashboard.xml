@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dashboard_root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/default_background_light"
+    android:orientation="vertical"
+    android:padding="8dp"
+    tools:context=".DashboardActivity">
+
+    <TextView
+        android:id="@+id/textViewWelcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:textColor="@color/text_primary"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        tools:text="دنیای سلامتی فرشته قشنگم!" />
+
+    <!-- ردیف اول -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_nutrition"
+            style="@style/DashboardCard">
+            <LinearLayout style="@style/DashboardCardContent">
+                <!-- ** تغییر اصلی: اضافه کردن ID ** -->
+                <ImageView
+                    android:id="@+id/icon_nutrition"
+                    style="@style/DashboardCardIcon"
+                    android:src="@drawable/dashboard_icon_nutrition" />
+                <TextView style="@style/DashboardCardTitle" android:text="تغذیه" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_growth"
+            style="@style/DashboardCard">
+            <LinearLayout style="@style/DashboardCardContent">
+                <!-- ** تغییر اصلی: اضافه کردن ID ** -->
+                <ImageView
+                    android:id="@+id/icon_growth"
+                    style="@style/DashboardCardIcon"
+                    android:src="@drawable/dashboard_icon_growth" />
+                <TextView style="@style/DashboardCardTitle" android:text="رشد کودک" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+    <!-- ردیف دوم -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_supplements"
+            style="@style/DashboardCard">
+            <LinearLayout style="@style/DashboardCardContent">
+                <!-- ** تغییر اصلی: اضافه کردن ID ** -->
+                <ImageView
+                    android:id="@+id/icon_supplements"
+                    style="@style/DashboardCardIcon"
+                    android:src="@drawable/dashboard_icon_supplements" />
+                <TextView style="@style/DashboardCardTitle" android:text="مکمل‌ها" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_vaccination"
+            style="@style/DashboardCard">
+            <LinearLayout style="@style/DashboardCardContent">
+                <!-- ** تغییر اصلی: اضافه کردن ID ** -->
+                <ImageView
+                    android:id="@+id/icon_vaccination"
+                    style="@style/DashboardCardIcon"
+                    android:src="@drawable/dashboard_icon_vaccine" />
+                <TextView style="@style/DashboardCardTitle" android:text="واکسیناسیون" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+    <!-- ردیف سوم -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_development"
+            style="@style/DashboardCard">
+            <LinearLayout style="@style/DashboardCardContent">
+                <!-- ** تغییر اصلی: اضافه کردن ID ** -->
+                <ImageView
+                    android:id="@+id/icon_development"
+                    style="@style/DashboardCardIcon"
+                    android:src="@drawable/dashboard_icon_development" />
+                <TextView style="@style/DashboardCardTitle" android:text="پایش تکامل" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_education"
+            style="@style/DashboardCard">
+            <LinearLayout style="@style/DashboardCardContent">
+                <!-- ** تغییر اصلی: اضافه کردن ID ** -->
+                <ImageView
+                    android:id="@+id/icon_education"
+                    style="@style/DashboardCardIcon"
+                    android:src="@drawable/dashboard_icon_education" />
+                <TextView style="@style/DashboardCardTitle" android:text="آموزش مادران" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+</LinearLayout>

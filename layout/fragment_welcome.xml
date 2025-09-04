@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEF7F8"
+    android:layoutDirection="rtl"
+    android:padding="32dp"
+    tools:context=".ui.profile.WelcomeFragment">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_welcome_illustration"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/welcome_illustration"
+        android:scaleType="centerCrop"
+        android:src="@drawable/mather_welcome"
+        app:civ_border_color="@color/girl_button"
+        app:civ_border_width="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.15"
+        app:layout_constraintWidth_percent="0.7" />
+
+    <TextView
+        android:id="@+id/tv_welcome_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="به خانواده ما خوش آمدی، مادر مهربان!"
+        android:textColor="@color/text_primary"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_welcome_illustration" />
+
+    <TextView
+        android:id="@+id/tv_welcome_subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:lineSpacingExtra="6dp"
+        android:text="@string/welcome_message_updated"
+        android:textColor="@color/text_secondary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_welcome_title" />
+
+    <!--
+      تغییر اصلی اینجاست:
+      ویژگی android:rotation="270" حذف شد تا فلش به سمت پایین اشاره کند.
+    -->
+    <ImageView
+        android:id="@+id/iv_arrow"
+        android:layout_width="95dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="4dp"
+        android:contentDescription="Arrow pointing to button"
+        android:src="@drawable/ic_arrow_down"
+        app:layout_constraintBottom_toTopOf="@id/btn_create_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="@color/girl_button" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_create_profile"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="32dp"
+        android:text="شروع ساخت پروفایل فرشته کوچولو"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:cornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

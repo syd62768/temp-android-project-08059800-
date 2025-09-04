@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    طراحی جدید کارت‌های اصلی، کاملاً هماهنگ با کارت‌های قطب‌نما
+-->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_card_root"
+    style="@style/Widget.App.Dashboard.MainCard.Modern"> <!-- استایل جدید -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/iv_main_card_icon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="10dp"
+            android:contentDescription="@string/main_card_icon_description"
+            tools:background="@drawable/dashboard_icon_bg_teal"
+            tools:src="@drawable/ic_main_vaccine" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_main_card_title"
+                style="@style/Widget.App.TextView.CardTitle.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="مراقبت و واکسیناسیون" />
+
+            <TextView
+                android:id="@+id/tv_main_card_subtitle"
+                style="@style/Widget.App.TextView.CardSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                tools:text="واکسن بعدی: ۱۸ ماهگی" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_chevron_left"
+            app:tint="@color/secondary_text_color"
+            android:contentDescription="@string/arrow_indicator" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

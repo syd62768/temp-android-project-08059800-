@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--
+        تم اصلی برنامه همراه کودک
+        این تم به صورت پیش‌فرض نوار عنوان (ActionBar) را نمایش نمی‌دهد.
+    -->
+    <style name="Theme.HamraheKoodak" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- رنگ‌های اصلی برند -->
+        <item name="colorPrimary">@color/default_colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/default_colorPrimaryDark</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- رنگ‌های ثانویه برند -->
+        <item name="colorSecondary">@color/default_button</item>
+        <item name="colorSecondaryVariant">@color/default_button_pressed</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <!-- === اصلاحات مربوط به نوار وضعیت برای هماهنگی با هدر === -->
+        <!-- ۱. رنگ نوار وضعیت با رنگ شروع گرادینت هدر یکی می‌شود -->
+        <item name="android:statusBarColor">@color/delight_header_start</item>
+        <!-- ۲. آیکون‌های نوار وضعیت را تیره می‌کند تا روی پس‌زمینه روشن خوانا باشند -->
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <!-- ۳. به برنامه اجازه می‌دهد تا محتوای خود را به زیر نوار وضعیت گسترش دهد -->
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+
+        <!-- اعمال فونت سفارشی به کل برنامه -->
+        <item name="android:fontFamily">@font/vazirmatn_regular</item>
+    </style>
+
+    <!-- ==================== CHANGE START ==================== -->
+    <!-- این استایل برای ظاهر متن تب‌ها اضافه شده است -->
+    <style name="SegmentedTabTextAppearance" parent="TextAppearance.AppCompat.Button">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <!-- ===================== CHANGE END ===================== -->
+
+</resources>

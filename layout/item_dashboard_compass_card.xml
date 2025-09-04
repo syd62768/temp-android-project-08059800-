@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     लेआउट قابل استفاده مجدد برای کارت‌های بخش "قطب‌نما"
+    - از MaterialCardView به عنوان ریشه استفاده شده تا افکت‌های کلیک و استایل به درستی اعمال شوند.
+-->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/compass_card_root"
+    style="@style/Widget.App.Dashboard.CompassCard">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/iv_compass_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="8dp"
+            android:contentDescription="@string/compass_icon_description"
+            tools:background="@drawable/dashboard_icon_bg_orange"
+            tools:src="@drawable/ic_compass_nutrition" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_compass_title"
+                style="@style/Widget.App.TextView.CardTitle.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="تغذیه" />
+
+            <TextView
+                android:id="@+id/tv_compass_subtitle"
+                style="@style/Widget.App.TextView.CardSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="میان‌وعده" />
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

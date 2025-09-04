@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:layoutDirection="rtl"
+    tools:context=".ui.dashboard.DashboardFragment">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/dashboard_background_dynamic">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:elevation="0dp">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:navigationIcon="@drawable/ic_menu"
+                app:tint="@color/dynamic_text_primary"/>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="16dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <!-- Header Section with Wavy Background -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="0dp">
+
+                    <com.mydesigns.hamrahekoodak.ui.dashboard.WavyHeaderView
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp">
+                            <LinearLayout
+                                android:id="@+id/name_container"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="start"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintEnd_toStartOf="@id/avatar_card"
+                                android:layout_marginEnd="12dp">
+                                <TextView
+                                    android:id="@+id/tv_child_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/vazirmatn_medium"
+                                    android:textColor="@color/delight_text_on_header"
+                                    android:textSize="28sp"
+                                    android:textStyle="bold"
+                                    tools:text="محمد" />
+                                <TextView
+                                    android:id="@+id/tv_child_age"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:fontFamily="@font/vazirmatn_regular"
+                                    android:textColor="@color/delight_text_on_header"
+                                    android:alpha="0.85"
+                                    android:textSize="14sp"
+                                    tools:text="۱ سال و ۵ ماه" />
+                            </LinearLayout>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/avatar_card"
+                                android:layout_width="88dp"
+                                android:layout_height="88dp"
+                                app:cardCornerRadius="44dp"
+                                app:cardElevation="0dp"
+                                app:strokeColor="@color/white"
+                                app:strokeWidth="3dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintHorizontal_bias="0.65">
+                                <ImageView
+                                    android:id="@+id/iv_avatar"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    tools:src="@drawable/avatar_boy"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <LinearLayout
+                                android:id="@+id/growth_bud_container"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/avatar_card"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:layout_marginStart="10dp">
+                                <ImageView
+                                    android:id="@+id/iv_growth_bud"
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:src="@drawable/ic_sakura" />
+                                <TextView
+                                    android:id="@+id/tv_growth_bud_title"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:fontFamily="@font/vazirmatn_medium"
+                                    android:text="نهال رشد"
+                                    android:textColor="@color/delight_text_on_header"
+                                    android:alpha="0.9"
+                                    android:textSize="10sp"
+                                    tools:ignore="SmallSp" />
+                            </LinearLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.mydesigns.hamrahekoodak.ui.dashboard.WavyHeaderView>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/wonder_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="1dp"> <!-- CHANGE: Elevation adjusted to be subtle -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+                        <ImageView
+                            android:id="@+id/iv_wonder_icon"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="15dp"
+                            android:src="@drawable/ic_daily_idea"
+                            android:contentDescription="@string/daily_tip_icon_desc" />
+                        <TextView
+                            android:id="@+id/tv_wonder_text"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/vazirmatn_medium"
+                            android:textSize="14sp"
+                            tools:text="هر روز یک ماجراجویی جدیده" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="12dp"
+                    android:fontFamily="@font/vazirmatn_medium"
+                    android:text="@string/compass_title"
+                    android:textColor="@color/dynamic_text_primary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="2"
+                    android:useDefaultMargins="true">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill_horizontal"
+                        app:cardBackgroundColor="@color/dynamic_card_secondary_bg"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="1dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="12dp"
+                            android:gravity="center_vertical">
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_compass_nutrition"
+                                android:background="@drawable/dashboard_icon_bg_orange"/>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginStart="12dp"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/vazirmatn_medium"
+                                    android:textColor="@color/dynamic_text_primary"
+                                    android:textSize="14sp"
+                                    android:text="@string/compass_nutrition_title" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/vazirmatn_regular"
+                                    android:textColor="@color/dynamic_text_secondary"
+                                    android:textSize="12sp"
+                                    android:text="@string/compass_nutrition_subtitle" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill_horizontal"
+                        app:cardBackgroundColor="@color/dynamic_card_secondary_bg"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="1dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="12dp"
+                            android:gravity="center_vertical">
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_compass_health"
+                                android:background="@drawable/dashboard_icon_bg_teal"/>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginStart="12dp"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/vazirmatn_medium"
+                                    android:textColor="@color/dynamic_text_primary"
+                                    android:textSize="14sp"
+                                    android:text="@string/compass_health_title" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/vazirmatn_regular"
+                                    android:textColor="@color/dynamic_text_secondary"
+                                    android:textSize="12sp"
+                                    android:text="@string/compass_health_subtitle" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill_horizontal"
+                        app:cardBackgroundColor="@color/dynamic_card_secondary_bg"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="1dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="12dp"
+                            android:gravity="center_vertical">
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_compass_development"
+                                android:background="@drawable/dashboard_icon_bg_sky"/>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginStart="12dp"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/vazirmatn_medium"
+                                    android:textColor="@color/dynamic_text_primary"
+                                    android:textSize="14sp"
+                                    android:text="@string/compass_development_title" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/vazirmatn_regular"
+                                    android:textColor="@color/dynamic_text_secondary"
+                                    android:textSize="12sp"
+                                    android:text="@string/compass_development_subtitle" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill_horizontal"
+                        app:cardBackgroundColor="@color/dynamic_card_secondary_bg"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="1dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="12dp"
+                            android:gravity="center_vertical">
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_compass_growth"
+                                android:background="@drawable/dashboard_icon_bg_rose"/>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginStart="12dp"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/vazirmatn_medium"
+                                    android:textColor="@color/dynamic_text_primary"
+                                    android:textSize="14sp"
+                                    android:text="@string/compass_growth_title" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/vazirmatn_regular"
+                                    android:textColor="@color/dynamic_text_secondary"
+                                    android:textSize="12sp"
+                                    android:text="@string/compass_growth_subtitle" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </GridLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_vaccination"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        app:cardBackgroundColor="@color/dynamic_card_primary_bg"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="1dp"> <!-- CHANGE: Elevation adjusted to be subtle -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="16dp">
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:background="@drawable/dashboard_icon_bg_teal"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_main_vaccine" />
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/vazirmatn_medium"
+                                    android:text="@string/main_card_vaccination_title"
+                                    android:textColor="@color/dynamic_text_primary"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:fontFamily="@font/vazirmatn_regular"
+                                    android:text="@string/main_card_vaccination_subtitle"
+                                    android:textColor="@color/dynamic_text_secondary"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/ic_chevron_left"
+                                app:tint="@color/dynamic_text_secondary" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_growth_nutrition"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        app:cardBackgroundColor="@color/dynamic_card_primary_bg"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="1dp"> <!-- CHANGE: Elevation adjusted to be subtle -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="16dp">
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:background="@drawable/dashboard_icon_bg_orange"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_main_growth" />
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/vazirmatn_medium"
+                                    android:text="@string/main_card_growth_title"
+                                    android:textColor="@color/dynamic_text_primary"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:fontFamily="@font/vazirmatn_regular"
+                                    android:text="@string/main_card_growth_subtitle"
+                                    android:textColor="@color/dynamic_text_secondary"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/ic_chevron_left"
+                                app:tint="@color/dynamic_text_secondary" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_development"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        app:cardBackgroundColor="@color/dynamic_card_primary_bg"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="1dp"> <!-- CHANGE: Elevation adjusted to be subtle -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="16dp">
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:background="@drawable/dashboard_icon_bg_sky"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_main_development" />
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/vazirmatn_medium"
+                                    android:text="@string/main_card_development_title"
+                                    android:textColor="@color/dynamic_text_primary"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:fontFamily="@font/vazirmatn_regular"
+                                    android:text="@string/main_card_development_subtitle"
+                                    android:textColor="@color/dynamic_text_secondary"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/ic_chevron_left"
+                                app:tint="@color/dynamic_text_secondary" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_parents"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        app:cardBackgroundColor="@color/dynamic_card_primary_bg"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="1dp"> <!-- CHANGE: Elevation adjusted to be subtle -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="16dp">
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:background="@drawable/dashboard_icon_bg_purple"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_main_parents"/>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/vazirmatn_medium"
+                                    android:text="@string/main_card_parents_title"
+                                    android:textColor="@color/dynamic_text_primary"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:fontFamily="@font/vazirmatn_regular"
+                                    android:text="@string/main_card_parents_subtitle"
+                                    android:textColor="@color/dynamic_text_secondary"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/ic_chevron_left"
+                                app:tint="@color/dynamic_text_secondary" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/drawer_menu" />
+</androidx.drawerlayout.widget.DrawerLayout>
+

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment"> <!-- مقصد شروع به اسپلش تغییر کرد -->
+
+    <!-- Splash Fragment: نقطه شروع برنامه -->
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.mydesigns.hamrahekoodak.ui.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <!-- Login Fragment -->
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.mydesigns.hamrahekoodak.ui.auth.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_verifyOtpFragment"
+            app:destination="@id/verifyOtpFragment" />
+    </fragment>
+
+    <!-- Verify OTP Fragment -->
+    <fragment
+        android:id="@+id/verifyOtpFragment"
+        android:name="com.mydesigns.hamrahekoodak.ui.auth.VerifyOtpFragment"
+        android:label="fragment_verify_otp"
+        tools:layout="@layout/fragment_verify_otp">
+        <argument
+            android:name="phoneNumber"
+            app:argType="string" />
+        <!-- مسیر برای کاربر قدیمی به داشبورد -->
+        <action
+            android:id="@+id/action_verifyOtpFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+        <!-- مسیر جدید برای کاربر جدید به صفحه خوش‌آمدگویی -->
+        <action
+            android:id="@+id/action_verifyOtpFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <!-- Welcome Fragment (جدید) -->
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.mydesigns.hamrahekoodak.ui.profile.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome">
+        <!-- مسیر از خوش‌آمدگویی به ساخت پروفایل -->
+        <action
+            android:id="@+id/action_welcomeFragment_to_createProfileFragment"
+            app:destination="@id/createProfileFragment" />
+    </fragment>
+
+    <!-- Create Profile Fragment -->
+    <fragment
+        android:id="@+id/createProfileFragment"
+        android:name="com.mydesigns.hamrahekoodak.ui.profile.CreateProfileFragment"
+        android:label="ساخت پروفایل"
+        tools:layout="@layout/fragment_create_profile" >
+        <action
+            android:id="@+id/action_createProfileFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <!-- Dashboard Fragment -->
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.mydesigns.hamrahekoodak.ui.dashboard.DashboardFragment"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_dashboardFragment_to_splashFragment"
+            app:destination="@id/splashFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>

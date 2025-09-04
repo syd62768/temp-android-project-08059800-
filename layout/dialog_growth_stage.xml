@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="24dp"
+    app:cardElevation="8dp"
+    app:cardBackgroundColor="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="32dp">
+
+        <ImageView
+            android:id="@+id/iv_dialog_icon"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@drawable/ic_sakura"
+            app:tint="#F472B6" /> <!-- A nice pink color for the blossom -->
+
+        <TextView
+            android:id="@+id/tv_dialog_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/vazirmatn_medium"
+            android:textColor="@color/primary_text_color"
+            android:textSize="18sp"
+            android:gravity="center"
+            tools:text="غنچه رشد نیما" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
