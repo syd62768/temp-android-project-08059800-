@@ -1,0 +1,29 @@
+<!-- مسیر: app/src/main/res/drawable/otp_box_underline_background.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- حالت فوکوس شده: خط زیرین ضخیم و رنگی -->
+    <item android:state_focused="true">
+        <layer-list>
+            <item android:bottom="2dp" android:left="-2dp" android:right="-2dp" android:top="-2dp">
+                <shape android:shape="rectangle">
+                    <solid android:color="@android:color/transparent" />
+                    <stroke
+                        android:width="2dp"
+                        android:color="@color/login_button_color" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    <!-- حالت عادی: خط زیرین نازک و خاکستری -->
+    <item>
+        <layer-list>
+            <item android:bottom="1dp" android:left="-2dp" android:right="-2dp" android:top="-2dp">
+                <shape android:shape="rectangle">
+                    <solid android:color="@android:color/transparent" />
+                    <stroke
+                        android:width="1dp"
+                        android:color="@color/login_input_border" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</selector>

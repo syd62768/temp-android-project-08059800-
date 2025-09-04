@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- حالتی که دکمه فشرده شده است -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/login_button_pressed_color"/>
+            <corners android:radius="16dp"/>
+        </shape>
+    </item>
+
+    <!-- حالت عادی دکمه -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/login_button_color"/>
+            <corners android:radius="16dp"/>
+        </shape>
+    </item>
+</selector>

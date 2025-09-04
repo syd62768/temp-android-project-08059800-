@@ -1,0 +1,13 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#81C784"/> <!-- سبز ملایم -->
+            <size android:width="64dp" android:height="64dp"/>
+        </shape>
+    </item>
+    <item
+        android:drawable="@drawable/ic_nutrition"
+        android:gravity="center"
+        android:width="32dp"
+        android:height="32dp"/>
+</layer-list>
