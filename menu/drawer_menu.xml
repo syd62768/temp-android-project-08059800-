@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <!-- گروه اصلی گزینه‌ها -->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_profile"
+            android:title="پروفایل فرشته کوچولو" />
+        <item
+            android:id="@+id/nav_experts"
+            android:icon="@drawable/ic_experts"
+            android:title="ارتباط با کارشناسان" />
+        <item
+            android:id="@+id/nav_reminders"
+            android:icon="@drawable/ic_reminders"
+            android:title="لیست یادآوری‌ها" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settings"
+            android:title="تنظیمات برنامه" />
+    </group>
+
+    <!-- گروه دوم برای سایر موارد -->
+    <item android:title="سایر موارد">
+        <menu>
+            <item
+                android:id="@+id/nav_support"
+                android:icon="@drawable/ic_support"
+                android:title="پشتیبانی و گزارش مشکل" />
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_about"
+                android:title="درباره برنامه" />
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_share"
+                android:title="اشتراک گذاری برنامه" />
+            <item
+                android:id="@+id/nav_update"
+                android:icon="@drawable/ic_update"
+                android:title="بروزرسانی‌ها" />
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_logout"
+                android:title="خروج از حساب کاربری" />
+        </menu>
+    </item>
+
+</menu>

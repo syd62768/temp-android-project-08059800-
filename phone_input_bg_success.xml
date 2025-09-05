@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- پس‌زمینه برای حالت موفقیت‌آمیز با دور کادر سبز -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- رنگ داخل کادر که همیشه سفید شیری است -->
+    <solid android:color="@color/milky_white" />
+
+    <!-- گوشه‌های گرد -->
+    <corners android:radius="16dp" />
+
+    <!-- دور کادر سبز رنگ -->
+    <stroke
+        android:width="2dp"
+        android:color="@color/accent_success"/>
+</shape>

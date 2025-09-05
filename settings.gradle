@@ -1,0 +1,23 @@
+// این بلاک به Gradle می‌گوید که برای پیدا کردن پلاگین‌ها (مثل پلاگین اپلیکیشن اندروید)
+// به این مخازن مراجعه کن. این بخش در کد قبلی وجود نداشت و باعث خطا شده بود.
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+// این بلاک برای پیدا کردن کتابخانه‌ها (dependencies) است
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        // این خط باید حتما وجود داشته باشد
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+rootProject.name = "همراه کودک"
+include ':app'

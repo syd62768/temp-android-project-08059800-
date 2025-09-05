@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    این یک selector است تا ظاهر کادر ورودی در حالت‌های مختلف (عادی و فوکوس شده) متفاوت باشد.
+-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- حالتی که کاربر در حال ویرایش کادر ورودی است -->
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/milky_white" />
+            <corners android:radius="16dp" />
+            <stroke android:width="2dp" android:color="@color/login_input_border_focused"/>
+        </shape>
+    </item>
+
+    <!-- حالت عادی -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/milky_white" />
+            <corners android:radius="16dp" />
+            <stroke android:width="1dp" android:color="@color/login_input_border"/>
+        </shape>
+    </item>
+</selector>
